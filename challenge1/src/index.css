@@ -1,0 +1,83 @@
+@font-face {
+  font-family: BebasNeueBook;
+  src: url("../FILES/STARTER//fonts/bebasneue-book-webfont.woff");
+  src: url("../FILES/STARTER//fonts/bebasneue-book-webfont.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --BACKGROUND: #2b2a30;
+  --Red: #9d0000;
+  --Green: #00aa51;
+  font-size: clamp(10px, 1.95vmin, 32px);
+  font-family: "BebasNeueBook";
+}
+
+body {
+  background-color: var(--BACKGROUND);
+  display: grid;
+  place-items: center center;
+  min-height: 100vh;
+  color: white;
+}
+
+button {
+  all: unset;
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 700;
+  letter-spacing: 0.6em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  -moz-appearance: textfield;
+}
+
+.timer__numbers {
+  display: flex;
+  font-size: 9rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.timer__numbers > input {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  text-align: center;
+  width: 2ch;
+}
+
+.gear-icon path {
+  fill: #585858;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.timer-wrapper {
+  border: 1rem solid black;
+  box-shadow: 5px 14px 44px #000, 5px -16px 50px rgba(255, 255, 255, 0.15),
+    inset 0 0 115px rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  background-image: radial-gradient(#3a393f, #17171a);
+
+  display: grid;
+  place-items: center;
+  width: clamp(330px, 48.7rem, 90vmin);
+  height: clamp(330px, 48.7rem, 90vmin);
+}
+
+#timer {
+  display: grid;
+  grid-row-gap: 1.4rem;
+}
