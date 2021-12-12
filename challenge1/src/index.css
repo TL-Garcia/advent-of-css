@@ -8,8 +8,8 @@
 
 :root {
   --BACKGROUND: #2b2a30;
-  --Red: #9d0000;
-  --Green: #00aa51;
+  --RED: #9d0000;
+  --GREEN: #00aa51;
   font-size: clamp(10px, 1.95vmin, 32px);
   font-family: "BebasNeueBook";
 }
@@ -64,8 +64,7 @@ input {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.timer-wrapper {
-  border: 1rem solid black;
+.timer__wrapper {
   box-shadow: 5px 14px 44px #000, 5px -16px 50px rgba(255, 255, 255, 0.15),
     inset 0 0 115px rgba(0, 0, 0, 0.45);
   border-radius: 50%;
@@ -75,6 +74,14 @@ input {
   place-items: center;
   width: clamp(330px, 48.7rem, 90vmin);
   height: clamp(330px, 48.7rem, 90vmin);
+}
+
+.timer__wrapper--running {
+  border: 0.56em solid var(--GREEN);
+}
+
+.timer__wrapper--stopped {
+  border: 0.56em solid var(--RED);
 }
 
 #timer {

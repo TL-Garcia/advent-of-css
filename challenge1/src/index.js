@@ -4,11 +4,10 @@ const minutesHandle = document.getElementById("minutes-handle");
 const secondsHandle = document.getElementById("seconds-handle");
 
 const getTimeInSeconds = (minutes, seconds) => {
-  console.log(typeof minutesHandle.value);
   return Number(minutes) * 60 + Number(seconds);
 };
 
-let timerId;
+let timerId = "";
 let mode = "STOPPED";
 let timer = getTimeInSeconds(minutesHandle.value, secondsHandle.value);
 let isConfigMode = true;
@@ -17,6 +16,18 @@ const toggleConfig = () => (isConfigMode = !isConfigMode);
 
 const makeDoubleDigitString = (number) =>
   number < 10 ? `0${number}` : `${number}`;
+
+const updateUI = () => {
+  const timerWrapper = document.querySelector(".timer__wrapper");
+
+  if (mode === "RUNNING") {
+    timerWrapper.classList.remove("timer__wrapper--stopped");
+    timerWrapper.classList.add("timer__wrapper--running");
+  } else {
+    timerWrapper.classList.remove("timer__wrapper--running");
+    timerWrapper.classList.add("timer__wrapper--stopped");
+  }
+};
 
 const startTimer = () => {
   timerId = setInterval(() => {
@@ -30,11 +41,13 @@ const startTimer = () => {
   }, 1000);
 
   mode = "RUNNING";
+  updateUI();
 };
 
 const stopTimer = () => {
   clearTimeout(timerId);
   mode = "STOPPED";
+  updateUI();
 };
 
 const handleButton = () => {
